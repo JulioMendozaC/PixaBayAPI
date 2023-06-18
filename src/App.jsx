@@ -6,23 +6,23 @@ function App() {
 
   const [busqueda, setBusqueda] = useState('');
 
-    // useEffect(() =>{
+    useEffect(() =>{
 
-    //   const consultaAPI = async () => {
-    //   if(busqueda === '' ) return ;
+      const consultaAPI = async () => {
+      if(busqueda === '' ) return ;
 
-    //   const paginacion = 30;
-    //   const key = '37461499-35c55174b21f2bb625cfecef2';
-    //   const url = `https://pixabay.com/api/?key=${key}&q=${busqueda}&per_page${paginacion}`
+      const paginacion = 30;
+      const key = '37461499-35c55174b21f2bb625cfecef2';
+      const url = `https://pixabay.com/api/?key=${key}&q=${busqueda}&per_page${paginacion}`
 
-    //     const respuesta = await fetch(url)
-    //     const resultado = await respuesta.json()
+        const respuesta = await fetch(url)
+        const resultado = await respuesta.json()
 
-    //     console.log(resultado)
+        console.log(resultado)
 
-    //   }
-    //   consultaAPI();
-    // }, [busqueda])
+      }
+      consultaAPI();
+    }, [busqueda])
 
   return (
 
@@ -30,7 +30,8 @@ function App() {
       <div className="jumbotron">
         <p className="lead text-center">Buscador De Imagenes</p>
         <Form 
-        setBusqueda={setBusqueda}/>
+        setBusqueda={setBusqueda}
+        />
       </div>
     </div>
 
